@@ -17,7 +17,7 @@ export const PokeShow = (props) => {
   const { idPokemon } = props;
   const [name, setName] = React.useState({});
   const [imagePokemon, setImagePokemon] = React.useState("");
-  console.logname;
+  console.log(name);
   const getPokemon = async () => {
     const responsePokemon = await API.get(`/${idPokemon}`);
     const { data } = responsePokemon;
