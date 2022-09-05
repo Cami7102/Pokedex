@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import { PokeShow } from "./components/PokeShow";
+import API from "./config/api";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [trainer, setTrainer] = useState();
+  const getTrainerId = async () => {
+    const trainerReponse = await API.get(`/trainer/3`);
+    const { data } = trainerReponse;
+    setTrainer(data.trainer[0]);
+    console.log(data.trainer);
+  };
+  useEffect(() => {
+    getTrainerId();
+  }, []);
+return <><h1>Estoy Roto</h1></>
+  //return <>{trainer && <PokeShow idPokemon={trainer.id_pokemon}></PokeShow>}</>;
 }
 
 export default App;
