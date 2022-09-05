@@ -30,7 +30,7 @@ export const PokeShow = (props) => {
   };
   React.useEffect(() => {
     getPokemon();
-  }, [idPokemon]);
+  });
 
   return (
     <Card sx={{ maxWidth: 345 }}>
