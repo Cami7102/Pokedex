@@ -16,8 +16,9 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 export const PokeShow = (props) => {
   const { idPokemon } = props;
   const [name, setName] = React.useState({});
-  console.log(name);
+  
   const [imagePokemon, setImagePokemon] = React.useState("");
+  console.log(name);
   const getPokemon = async () => {
     const responsePokemon = await API.get(`/${idPokemon}`);
     const { data } = responsePokemon;
