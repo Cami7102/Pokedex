@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     getTrainerId();
   }, []);
-return <><h1>Estoy Roto</h1></>
+return <><h1>Estoy Roto 2g</h1></>
   //return <>{trainer && <PokeShow idPokemon={trainer.id_pokemon}></PokeShow>}</>;
 }
 
