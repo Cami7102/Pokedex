@@ -16,8 +16,9 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 export const PokeShow = (props) => {
   const { idPokemon } = props;
   const [name, setName] = React.useState({});
+  
   const [imagePokemon, setImagePokemon] = React.useState("");
-
+  console.log(name);
   const getPokemon = async () => {
     const responsePokemon = await API.get(`/${idPokemon}`);
     const { data } = responsePokemon;
@@ -29,7 +30,7 @@ export const PokeShow = (props) => {
   };
   React.useEffect(() => {
     getPokemon();
-  }, [idPokemon]);
+  });
 
   return (
     <Card sx={{ maxWidth: 345 }}>
